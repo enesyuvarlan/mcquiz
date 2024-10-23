@@ -45,6 +45,12 @@ const config: Config = {
             dark: "",
           },
         },
+        background: {
+          navbar: {
+            DEFAULT: "#ffffff",
+            dark: "",
+          },
+        },
       },
       borderRadius: {},
     },

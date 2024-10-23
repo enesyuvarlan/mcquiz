@@ -1,13 +1,15 @@
 import React from "react";
 
-const page = () => {
+const QuizPage = () => {
   return (
-    <div className="h-[1080px] w-[1080px] flex bg-green-950 mx-auto">
-      <div className="font-bold text-white text-5xl font-20 mx-auto my-auto">
-        Quiz Page
+    <main>
+      <div className="container mx-auto">
+        <div className="">
+          <h1>QuizPage</h1>
+        </div>
       </div>
-    </div>
+    </main>
   );
 };
 
-export default page;
+export default QuizPage;

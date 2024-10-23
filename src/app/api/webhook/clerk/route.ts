@@ -1,7 +1,6 @@
 import { prismadb } from "@/lib/db";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
-import { Svix } from "svix";
 import { Webhook } from "svix";
 
 export async function POST(req: Request) {
@@ -44,7 +43,6 @@ export async function POST(req: Request) {
     });
   }
 
-  const { id } = evt.data;
   const eventType = evt.type;
 
   if (eventType === "user.created") {

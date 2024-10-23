@@ -12,11 +12,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark,
-      }}
-    >
+    <ClerkProvider appearance={{}}>
       <html lang="en">
         <body>{children}</body>
       </html>
