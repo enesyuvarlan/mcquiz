@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
@@ -30,31 +31,50 @@ const config: Config = {
           },
           body: {
             DEFAULT: "#767374",
-            dark: "",
+            dark: "#d9d9d9",
+          },
+          buttonText: {
+            DEFAULT: "#ffffff",
+            dark: "#000000",
+            answerButton: "",
+            answerButtonDark: "",
           },
           button: {
-            DEFAULT: "#ffffff",
+            DEFAULT: "#000000",
             defaultHover: "",
             defaultFocus: "",
             primary: "#ea4d34",
             primaryHover: "",
             primaryFocus: "",
-            secondary: "",
-            secondaryHover: "",
-            secondaryFocus: "",
-            dark: "",
+            dark: "#ffffff",
+          },
+          answerButton: {
+            DEFAULT: "#ffffff",
+            hover: "#f0f0f0",
+            focus: "#d9d9d9",
+            dark: "#000000",
+            darkHover: "#2a2a2a",
+            darkFocus: "#4d4d4d",
           },
         },
         background: {
           navbar: {
             DEFAULT: "#ffffff",
-            dark: "",
+            dark: "#000000",
+          },
+          statusCard: {
+            DEFAULT: "#000000",
+            red: "#ea4d34",
+            blue: "#90c6d8",
+            green: "#8dcd75",
+            yellow: "#ffcb3e",
+            purple: "#9c7af8",
           },
         },
       },
       borderRadius: {},
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 };
 export default config;

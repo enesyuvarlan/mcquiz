@@ -49,7 +49,7 @@ export default function Home() {
           <Link href="/quiz">Lets Go</Link>
         </Button>
       </section>
-      <footer className="fixed bottom-0 text-black flex py-4 text-center justify-center items-center">
+      <footer className="fixed bottom-0 text-textColor-header dark:text-textColor-header-dark flex py-4 text-center justify-center items-center">
         <p className="text-sm mr-1">
           Made with by{" "}
           <a

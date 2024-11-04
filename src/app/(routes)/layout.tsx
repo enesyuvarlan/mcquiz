@@ -9,7 +9,7 @@ const RouteLayout = ({ children }: RouteLayoutProps) => {
   return (
     <div className="container mx-auto">
       <Navbar />
-      {children}
+      <div className="px-16">{children}</div>
     </div>
   );
 };
