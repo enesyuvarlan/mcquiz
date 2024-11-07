@@ -95,7 +95,7 @@ export const Quiz = ({ questions, userId }: QuizProps) => {
 
   return (
     <div className="min-h-[600px] mx-auto">
-      {showResults ? (
+      {!showResults ? (
         <Questions
           questionText={formattedQuestion}
           answers={answers}
@@ -109,7 +109,12 @@ export const Quiz = ({ questions, userId }: QuizProps) => {
           isLastQuestion={activeQuestion === questions.length - 1}
         />
       ) : (
-        <Results />
+        <Results
+          score={results.score}
+          correctAnswers={results.correctAnswers}
+          wrongAnswers={results.wrongAnswers}
+          totalQuestions={questions.length}
+        />
       )}
     </div>
   );

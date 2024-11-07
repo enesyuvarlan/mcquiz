@@ -9,7 +9,7 @@ interface StatusCardProps {
 export function StatusCard({ title, value, color }: StatusCardProps) {
   return (
     <div
-      className={`${rajdhani.className} ${color} flex flex-col justify-start items-center  max-w-[250px] sm:max-w-[250px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[500px] overflow-hidden text-ellipsis whitespace-nowrap text-2xl  font-bold text-white px-7 py-3 rounded-full`}
+      className={`${rajdhani.className} ${color} flex flex-col justify-center items-center min-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap text-2xl  font-bold text-white px-7 py-3 rounded-full shadow-md`}
     >
       <div className="">{title}</div>
       <div className="">{value}</div>

@@ -5,7 +5,19 @@ import { StatusCard } from "./StatusCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function Results() {
+interface ResultsProps {
+  score: number;
+  correctAnswers: number;
+  wrongAnswers: number;
+  totalQuestions: number;
+}
+
+export default function Results({
+  score,
+  correctAnswers,
+  wrongAnswers,
+  totalQuestions,
+}: ResultsProps) {
   const colors = {
     percentage: "bg-background-statusCard-red",
     totalQuestion: "bg-background-statusCard-green",
@@ -15,23 +27,37 @@ export default function Results() {
   };
 
   const mock = [
-    { title: "PERCENTAGE", value: "20%", color: colors.percentage },
-    { title: "TOTAL QUESTION", value: "15", color: colors.totalQuestion },
-    { title: "TOTAL SCORE", value: "10", color: colors.totalScore },
-    { title: "CORRECT ANSWERS", value: "2", color: colors.correctAnswers },
-    { title: "WRONG ANSWERS", value: "13", color: colors.wrongAnswers },
+    {
+      title: "PERCENTAGE",
+      value: `${(score / 50) * 100}%`,
+      color: colors.percentage,
+    },
+    {
+      title: "TOTAL QUESTION",
+      value: totalQuestions,
+      color: colors.totalQuestion,
+    },
+    { title: "TOTAL SCORE", value: score, color: colors.totalScore },
+    {
+      title: "CORRECT ANSWERS",
+      value: correctAnswers,
+      color: colors.correctAnswers,
+    },
+    {
+      title: "WRONG ANSWERS",
+      value: wrongAnswers,
+      color: colors.wrongAnswers,
+    },
   ];
 
   return (
-    <section
-      className={`${rajdhani.className} flex flex-col justify-start items-center `}
-    >
+    <section className={`${rajdhani.className} container`}>
       <h1
-        className={`${agdasima.className} mt-5 text-center text-4xl md:text-4xl lg:text5xl xl:text-6xl text-textColor-header  dark:text-textColor-header-dark`}
+        className={`${agdasima.className} mt-5 text-center text-5xl md:text-5xl lg:text5xl xl:text-6xl text-textColor-header  dark:text-textColor-header-dark`}
       >
         Result
       </h1>
-      <div>
+      <div className="grid sm:grid-cols-1 xl:grid-cols-2 gap-3 mt-10 w-max-[300px] sm:w-max-[300px] md:w-max-[400px] lg:w-max-[500px] xl:w-max-[600px]">
         {mock.map((card, index) => (
           <StatusCard
             key={index}
@@ -41,12 +67,13 @@ export default function Results() {
           />
         ))}
       </div>
-      <div>
+      <div className="flex justify-center mt-7">
         <Button
           asChild
           variant="default"
           size="responsive"
-          className="mt-4 font-bold"
+          className="mt-10 font-bold"
+          onClick={() => window.location.reload()}
         >
           <Link href="/quiz">Restart</Link>
         </Button>
